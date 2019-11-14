@@ -1,0 +1,4 @@
+ res←aplHandler arg;event;context
+ (event context)←arg
+ event.output←↓1 involute event.size
+ res←event

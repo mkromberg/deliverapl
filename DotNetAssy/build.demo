@@ -1,4 +1,2 @@
-)ns Mortens
-)cs Mortens
 ]load c:\devt\deliverapl\dotnetassy\Paths.aplc
 ⍝ Now export .NET assembly

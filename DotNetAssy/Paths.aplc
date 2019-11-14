@@ -1,20 +1,22 @@
-﻿:Class Paths
-:Using System
+﻿:Namespace Mortens
+    :Class Paths
+    :Using System
 
-    ∇ r←Involution(Size)
-      :Access Public Shared
-      :Signature String[]←Involute Int32 Size
-      r←↓1 involute Size
-    ∇
+        ∇ r←Involute(Size)
+          :Access Public Shared
+          :Signature String[]←Involute Int32 Size
+          r←↓1 iv Size
+        ∇
 
-      involute←{
-          ⍺←0
-          repeat←1↓2/⌽⍳⍵
-          moves←(¯1+2×⍵)⍴m←(⊢,-)1 ⍵
-          path←+\repeat/moves
-          ⍺≡0:⍵ ⍵⍴⍋path
-          r←⍵ ⍵⍴((repeat/'→↓←↑'[m⍳moves])@path)(⍵×⍵)⍴⍺
-          ((2×⍵)⍴1 0)\r
-      }
+          iv←{
+              ⍺←0
+              repeat←1↓2/⌽⍳⍵
+              moves←(¯1+2×⍵)⍴m←(⊢,-)1 ⍵
+              path←+\repeat/moves
+              ⍺≡0:⍵ ⍵⍴⍋path
+              r←⍵ ⍵⍴((repeat/'→↓←↑'[m⍳moves])@path)(⍵×⍵)⍴⍺
+              ((2×⍵)⍴1 0)\r
+          }
 
-:EndClass
+    :EndClass
+:EndNamespace

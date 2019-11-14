@@ -2,12 +2,10 @@
 
     ∇ Compose;input;inputArea;outputArea
       :Access Public
-      Add _.Style'#num,#dir'('border-style' 'solid' 'margin' '0.5em' 'padding' '10px')  
-      Add _.title 'IUI - The Involution UI'
+      Add _.Style'#num,#dir'('border-style' 'solid' 'margin' '0.5em' 'padding' '10px')
+      Add _.title'IUI - The Involution UI'
      
-     ⍝input←('N'('value' 1))New _.EditField''
-      input←('N'('type' 'number')('min' 1)('max' 20)('value' 1))New _.EditField''
-     ⍝input←('N'('type' 'range')('min' 1)('max' 20)('value' 1))New _.EditField''
+      input←('N'('type' 'range')('min' 1)('max' 20)('value' 1))New _.EditField''
      
       inputArea←New _.InputGrid'N:'input
       (outputArea←New _.StackPanel).Add¨'#num' '#dir'{⍺ New _.pre ⍵}¨1 '→'
@@ -27,13 +25,14 @@
     ∇
 
       involute←{
-          ⍺←0
-          repeat←1↓2/⌽⍳⍵
-          moves←(¯1+2×⍵)⍴m←(⊢,-)1 ⍵
-          path←+\repeat/moves
-          ⍺≡0:⍵ ⍵⍴⍋path
-          r←⍵ ⍵⍴((repeat/'→↓←↑'[m⍳moves])@path)(⍵×⍵)⍴⍺
-          ((2×⍵)⍴1 0)\r
+          ⍺←0                        ⍝ default: return numbers
+          moves←(¯1+2×⍵)⍴m←1 ⍵,-1 ⍵  ⍝ sequence of 1 ⍵ ¯1 (-⍵)
+          repeat←1↓2/⌽⍳⍵             ⍝ number of times to repeat each move
+          path←+\repeat/moves        ⍝ path through matrix (viewed as a list)
+          ⍺≡0:⍵ ⍵⍴⍋path              ⍝ return numbers if ⍺=0
+          charmoves←repeat/'→↓←↑'[m⍳moves] ⍝ else map moves to arrows
+          r←⍵ ⍵⍴(charmoves@path)(⍵×⍵)⍴⍺    ⍝ insert arrows along path
+          ((2×⍵)⍴1 0)\r              ⍝ insert alternate blank columns
       }
 
 :EndClass

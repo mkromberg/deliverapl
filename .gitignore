@@ -1,2 +1,3 @@
 *.dll
 JsonLib/__pycache__/*
+PortableUI/sessions.dcf

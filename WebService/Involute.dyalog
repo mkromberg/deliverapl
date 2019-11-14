@@ -1,4 +1,6 @@
- involute←{
+r←Involute N;iv
+
+ iv←{
      ⍺←0                        ⍝ default: return numbers
      moves←(¯1+2×⍵)⍴m←1 ⍵,-1 ⍵  ⍝ sequence of 1 ⍵ ¯1 (-⍵)
      repeat←1↓2/⌽⍳⍵             ⍝ number of times to repeat each move
@@ -8,3 +10,5 @@
      r←⍵ ⍵⍴(charmoves@path)(⍵×⍵)⍴⍺    ⍝ insert arrows along path
      ((2×⍵)⍴1 0)\r              ⍝ insert alternate blank columns
  }
+
+ r←↓1 iv N                      ⍝ Split into vector of char vectors

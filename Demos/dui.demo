@@ -1,5 +1,7 @@
 ⍝ 3: Cross-Platform GUI
 ⍝ 3a: Desktop
+
+⍝ Inspect portableui\index.mipage
 )clear
 ]load C:\Devt\Dui\DUI
 DUI.Run'C:\Devt\deliverapl\PortableUI' 
@@ -7,6 +9,6 @@ DUI.Run'C:\Devt\deliverapl\PortableUI'
 ⍝ 3b: Web
 )clear
 ]load C:\Devt\Dui\DUI
-⍝ DUI.Run'C:\Devt\deliverapl\PortableUI'  No port number: Use Chromium Embedded Framework
-  DUI.Run'C:\Devt\deliverapl\PortableUI'  8080
+⍝ DUI.Run'C:\Devt\deliverapl\PortableUI'         ⍝ No port number: Use Chromium Embedded Framework
+  DUI.Run'C:\Devt\deliverapl\PortableUI'  8080   ⍝ Port number: Run web server
 ]open http://localhost:8080

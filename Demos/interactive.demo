@@ -1,26 +1,11 @@
-⍝ 0: Goofin' around
-w←5
-(+,-) 1 w
-¯1+2×w
-moves←(¯1+2×w)⍴(+,-) 1 w
-moves
-⍳w
-⌽⍳w
-2/⌽⍳w
-repeat←1↓2/⌽⍳w
-repeat
-repeat/moves
-path←+\repeat/moves
-path
-⍋path
-w w⍴⍋path
+⍝ Deployment 1: Interactive APL Session w/Win32 GUI
+)clear
 ]link.create # c:\devt\deliverapl\interactive
+⍝ Look at folder in VS Code
 involute 5
 1 involute 5 ⍝ trace me
-{⍺,≢⍵}⌸,1 involute 5
-{⍺,≢⍵}⌸,1 involute 1000
 n←5 10 100 250 500 750 1000
-⎕←shapes←⍴¨{involute ⍵}¨n
+shapes←⍴¨{involute ⍵}¨n
 ]display shapes
 )copy dfns cmpx
 total_times←1 cmpx ¨ {'involute ',⍕⍵} ¨ n
@@ -28,8 +13,6 @@ n,⍪total_times
 per_elm←total_times÷×/¨shapes
 'n' 'µs/elm'⍪ n,⍪4⍕¨1E6×per_elm
 ⍝ OK, Enough fun already
-
-⍝ Deployment 1: Interactive APL Session w/Win32 GUI
 'F' ⎕WC 'Form' 'Involute' ('Coord' 'Pixel')('Size' 600 800)
 'F.Input' ⎕WC 'Spinner' ('Posn' 10 10)('Size' ⍬ 100)('Limits' 1 20)('Thumb' 5)   
 'F.Output'⎕WC'Text' (1 involute 5) (60 10)('VAlign' ¯1)('HAlign' 0)('Font' 'APL385 Unicode')
@@ -41,7 +24,7 @@ InvoluteUI ⍝ Trace me!
 )save c:\devt\deliverapl\interactive\involuteui -force
 )clear
 )load c:\devt\deliverapl\interactive\involuteui
+
 ⍝ 2: Stand-alone executable
 ⍝ File|Export|Save As Standalone Executable
 ⍝ Launch involuteui.exe
-

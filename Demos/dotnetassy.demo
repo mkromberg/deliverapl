@@ -1,0 +1,5 @@
+⍝ 5 Microsoft.Net Assembly
+]load c:\devt\deliverapl\dotnetassy\Paths.aplc
+)ed Mortens
+Mortens.Paths.Involute ,5
+⍝ File|Export|DotNet Assembly

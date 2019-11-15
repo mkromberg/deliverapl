@@ -1,0 +1,6 @@
+ NewValue(obj evt newval step);text;form
+⍝ Callback function for "spin" event
+
+ form←obj.##                 ⍝ Parent form
+ text←1 involute newval      ⍝ Compute output for new value
+ (form.Output.Text)←text     ⍝ Update Output.Text

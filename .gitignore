@@ -1,3 +1,5 @@
 *.dll
 JsonLib/__pycache__/*
 PortableUI/sessions.dcf
+Interactive/involuteui.dws
+Interactive/involuteui.exe

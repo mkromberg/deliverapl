@@ -1,0 +1,12 @@
+⍝ 3: Cross-Platform GUI
+⍝ 3a: Desktop
+)clear
+]load C:\Devt\Dui\DUI
+DUI.Run'C:\Devt\deliverapl\PortableUI' 
+
+⍝ 3b: Web
+)clear
+]load C:\Devt\Dui\DUI
+⍝ DUI.Run'C:\Devt\deliverapl\PortableUI'  No port number: Use Chromium Embedded Framework
+  DUI.Run'C:\Devt\deliverapl\PortableUI'  8080
+]open http://localhost:8080

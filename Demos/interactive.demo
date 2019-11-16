@@ -1,8 +1,8 @@
-⍝ Deployment 1: Interactive APL Session w/Win32 GUI
+⍝ Deployment 0: Interactive APL Session w/Win32 GUI
 )clear
 ]link.create # c:\devt\deliverapl\interactive
-⍝ Look at folder in VS Code
 involute 5
+⍝ Look at folder in VS Code
 1 involute 5 ⍝ trace me
 n←5 10 100 250 500 750 1000
 shapes←⍴¨{involute ⍵}¨n
@@ -20,6 +20,7 @@ F.Input.onSpin←'NewValue'
 )ed NewValue
 )erase F
 InvoluteUI ⍝ Trace me!
+⍝ 1. Deploy as saved workspace for use in the Dyalog REPL
 ⎕LX←'InvoluteUI'
 )save c:\devt\deliverapl\interactive\involuteui -force
 )clear
@@ -28,3 +29,5 @@ InvoluteUI ⍝ Trace me!
 ⍝ 2: Stand-alone executable
 ⍝ File|Export|Save As Standalone Executable
 ⍝ Launch involuteui.exe
+
+]demo c:\devt\deliverapl\demos\dui

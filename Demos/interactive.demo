@@ -2,6 +2,7 @@
 )clear
 ]link.create # c:\devt\deliverapl\interactive
 involute 5
+involute 15
 ⍝ Look at folder in VS Code
 1 involute 5 ⍝ trace me
 n←5 10 100 250 500 750 1000
@@ -13,7 +14,7 @@ n,⍪total_times
 per_elm←total_times÷×/¨shapes
 'n' 'µs/elm'⍪ n,⍪4⍕¨1E6×per_elm
 ⍝ OK, Enough fun already
-'F' ⎕WC 'Form' 'Involute' ('Coord' 'Pixel')('Size' 600 800)
+'F' ⎕WC 'Form' 'Involute' ('Coord' 'Pixel')('Size' 600 800)('Posn' 800 400)
 'F.Input' ⎕WC 'Spinner' ('Posn' 10 10)('Size' ⍬ 100)('Limits' 1 20)('Thumb' 5)   
 'F.Output'⎕WC'Text' (1 involute 5) (60 10)('VAlign' ¯1)('HAlign' 0)('Font' 'APL385 Unicode')
 F.Input.onSpin←'NewValue'

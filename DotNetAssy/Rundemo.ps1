@@ -3,5 +3,5 @@ Add-Type -Path C:\devt\deliverapl\dotnetassy\dyalognet.dll
 [Reflection.Assembly]::LoadFile("c:\devt\deliverapl\dotnetassy\Paths.dll")
 Write-Output ""
 
-$test = [Mortens.Paths]::Involute(5)
+$test = [Mortens.Paths]::Involute(6)
 Write-Output $test

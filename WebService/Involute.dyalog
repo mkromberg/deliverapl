@@ -14,4 +14,4 @@ r←Involute N;iv
      ((2×⍵)⍴1 0)\r              ⍝ insert alternate blank columns
   }
 
-  r←↓char iv N                  ⍝ Split into vector of char vectors
+  r←↓char iv size                  ⍝ Split into vector of char vectors

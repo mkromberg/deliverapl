@@ -1,20 +1,16 @@
-⍝ Deployment 0: Interactive APL Session w/Win32 GUI
-)clear
-]link.create # c:\devt\deliverapl\interactive
-involute 5
-involute 15
+⍝ Deployment 1: Interactive APL Session
+⍝ Open folder # c:\devt\deliverapl\interactive
 ⍝ Look at folder in VS Code
-1 involute 5 ⍝ trace me
-n←5 10 100 250 500 750 1000
-shapes←⍴¨{involute ⍵}¨n
-]display shapes
-)copy dfns cmpx
-total_times←1 cmpx ¨ {'involute ',⍕⍵} ¨ n
-n,⍪total_times
-per_elm←total_times÷×/¨shapes
-'n' 'µs/elm'⍪ n,⍪4⍕¨1E6×per_elm
-⍝ OK, Enough fun already
-'F' ⎕WC 'Form' 'Involute' ('Coord' 'Pixel')('Size' 600 800)('Posn' 800 400)
+]open c:\devt\deliverapl\interactive -using=code
+⍝ Look at folder in VS Code
+)fns
+involute 5
+⍴involute 1000
+involute 0
+⍴involute 0
+⍝ (revert the change for the next demo)
+⍝ Enough fun already - we need a UI
+'F' ⎕WC 'Form' 'Involute' ('Coord' 'Pixel')('Size' 400 600)('Posn' 200 800)
 'F.Input' ⎕WC 'Spinner' ('Posn' 10 10)('Size' ⍬ 100)('Limits' 1 20)('Thumb' 5)   
 'F.Output'⎕WC'Text' (1 involute 5) (60 10)('VAlign' ¯1)('HAlign' 0)('Font' 'APL385 Unicode')
 F.Input.onSpin←'NewValue'
@@ -22,13 +18,17 @@ F.Input.onSpin←'NewValue'
 )erase F
 InvoluteUI ⍝ Trace me!
 ⍝ 1. Deploy as saved workspace for use in the Dyalog REPL
-⎕LX←'InvoluteUI'
+⍝ Remove links to source files:
+]link.break #
+⍝ Set "Latent eXpression"
+⎕LX←'InvoluteUI' 
+⍝ save binary workspace containing all code & data
 )save c:\devt\deliverapl\interactive\involuteui -force
-)clear
-)load c:\devt\deliverapl\interactive\involuteui
 
 ⍝ 2: Stand-alone executable
 ⍝ File|Export|Save As Standalone Executable
-⍝ Launch involuteui.exe
 
-]demo c:\devt\deliverapl\demos\dui
+⍝ Sign off now, and then
+⍝ dyalogrt involuteui
+⍝ involuteui.exe
+)off

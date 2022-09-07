@@ -2,7 +2,6 @@
 ⍝ Open folder # c:\devt\deliverapl\interactive
 ⍝ Look at folder in VS Code
 ]open c:\devt\deliverapl\interactive -using=code
-⍝ Look at folder in VS Code
 )fns
 involute 5
 ⍴involute 1000

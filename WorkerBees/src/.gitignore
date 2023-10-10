@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+.vs
+Dyalog
+bin
+AplClasses/obj
+AplClasses/bin
+WorkerBeesManager/obj
+WorkerBeesManager/bin

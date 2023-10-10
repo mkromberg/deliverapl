@@ -1,0 +1,88 @@
+:NameSpace AplClasses
+
+    :Class WorkerBee : IDisposable
+    :Using System
+
+        ∇ Make
+          :Implements Constructor
+          :Access Public
+          :Signature WorkerBee
+        ∇
+
+        ∇ r←FixFunction nr;fxres
+          :Access Public
+          :Signature Boolean←FixFunction String[]
+          fxres←#.⎕FX nr
+          r←∨/fxres⍷⊃nr
+        ∇
+
+        ∇ LoadWorkspace wsname;fxres
+          :Access Public
+          :Signature LoadWorkspace String wsname
+          ⎕WSID←wsname
+          ⎕CY ⎕WSID
+          '⎕AVU' '⎕LX' '⎕PP' '⎕ML' '⎕IO' '⎕WX' '⎕RL' '⎕CT' '⎕DCT' '⎕DIV' '⎕FR'⎕CY ⎕WSID
+          ⍎⎕LX
+        ∇
+
+        ∇ LoadSharedCodeFiles sharecodefiles;xs;ex;lx
+          :Access Public
+          :Signature LoadSharedCodeFiles String[] sharecodefiles
+          (8668⌶)sharecodefiles
+        ∇
+
+        ∇ ExecuteExpression expr
+          :Access Public
+          :Signature Object←ExecuteExpression String
+          :With '#'
+              {}⍎expr
+          :EndWith
+        ∇
+
+        ∇ r←ExecuteExpressionWithResult expr
+          :Access Public
+          :Signature Object←ExecuteExpressionWithResult String
+          :With '#'
+              r←⍎expr
+          :EndWith
+        ∇
+
+        ∇ r←ExecuteFunctionWithResult(func args);expr
+          :Access Public
+          :Signature Object←ExecuteFunctionWithResult String func, Object args
+          :If '#'≠⊃func
+              expr←'#.',func,' args'
+          :Else
+              expr←func,' args'
+          :EndIf
+          r←⍎expr
+        ∇
+
+        ∇ SetStop(func line)
+          :Access Public
+          :Signature SetStop String func, Int32 line
+          :If '#'≠⊃func
+              func←'#.',func
+          :EndIf
+          line ⎕STOP func
+        ∇
+
+        ∇ SetStopThis(func line)
+          :Access Public
+          :Signature SetStopThis String func, Int32 line
+          line ⎕STOP func
+        ∇
+
+        ∇ DisposeImpl
+          :Implements Method IDisposable.Dispose
+          destruct
+        ∇
+
+        ∇ destruct;sink
+          :Implements Destructor
+          ⍝ Cleanup!
+        ∇
+
+    :EndClass
+
+:EndNamespace

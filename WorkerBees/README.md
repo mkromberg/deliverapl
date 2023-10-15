@@ -22,7 +22,7 @@ dyalognet.dll
 Load AplWorkerBees.dws Dyalog APL workspace in Dyalog APL.
 First you will have to tell where the newly compiled dll's are placed:
 
-`#.libDLL←'<path to \src\bin\Debug\>' (e.g. #.libDLL←'C:\Repos\AplWorkerBees\src\bin\Debug\')`
+`#.libDLL←'<path to dll files>' (e.g. #.libDLL←'C:\Repos\AplWorkerBees\src\bin\Debug\')`
 
 Then run e.g. following expressions:
 ```
